@@ -74,8 +74,7 @@ G2L["7"]["Position"] = UDim2.new(0.15673764050006866, 0, 0.7537330389022827, 0);
 
 -- StarterGui.AscendGUI.Frame.TextButton.LocalScript
 G2L["8"] = Instance.new("LocalScript", G2L["7"]);
-G2L["8"]["Enabled"] = false;
-G2L["8"]["Disabled"] = true;
+
 
 -- StarterGui.AscendGUI.Frame.TextButton.UICorner
 G2L["9"] = Instance.new("UICorner", G2L["7"]);
@@ -160,9 +159,9 @@ G2L["12"]["Name"] = [[MadeBy]];
 G2L["12"]["BackgroundTransparency"] = 1;
 G2L["12"]["Position"] = UDim2.new(0.0029850746504962444, 0, 0.9357606172561646, 0);
 
--- StarterGui.AscendGUI.Frame.UICorner
-G2L["13"] = Instance.new("UICorner", G2L["2"]);
-G2L["13"]["CornerRadius"] = UDim.new(0.07500000298023224, 0);
+-- StarterGui.AscendGUI.Frame.disab
+G2L["13"] = Instance.new("LocalScript", G2L["2"]);
+G2L["13"]["Name"] = [[disab]];
 
 -- StarterGui.AscendGUI.tbf
 G2L["14"] = Instance.new("Frame", G2L["1"]);
@@ -273,6 +272,28 @@ local script = G2L["6"];
 	
 end;
 task.spawn(C_6);
+-- StarterGui.AscendGUI.Frame.TextButton.LocalScript
+local function C_8()
+local script = G2L["8"];
+	script.Parent.MouseButton1Up:Connect(function()
+	
+		game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = true
+	-- Stop all currently playing animations
+		for _, track in ipairs(_G.humanoid:GetPlayingAnimationTracks()) do
+			track:Stop()
+	end
+	
+		workspace.Gravity = _G.GameGravity
+	   _G.humanoid.WalkSpeed = _G.UserSpeed                       
+		_G.humanoid.JumpPower = _G.UserJump
+		
+		
+	end)
+	
+	
+	
+end;
+task.spawn(C_8);
 -- StarterGui.AscendGUI.Frame.Button.a
 local function C_b()
 local script = G2L["b"];
@@ -325,6 +346,12 @@ local script = G2L["e"];
 	end)
 end;
 task.spawn(C_e);
+-- StarterGui.AscendGUI.Frame.disab
+local function C_13()
+local script = G2L["13"];
+	game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = false
+end;
+task.spawn(C_13);
 -- StarterGui.AscendGUI.tbf.TextButton.LocalScript
 local function C_16()
 local script = G2L["16"];
