@@ -163,38 +163,42 @@ G2L["12"]["Position"] = UDim2.new(0.0029850746504962444, 0, 0.9357606172561646, 
 G2L["13"] = Instance.new("LocalScript", G2L["2"]);
 G2L["13"]["Name"] = [[disab]];
 
+-- StarterGui.AscendGUI.Frame.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["2"]);
+G2L["14"]["CornerRadius"] = UDim.new(0.07500000298023224, 0);
+
 -- StarterGui.AscendGUI.tbf
-G2L["14"] = Instance.new("Frame", G2L["1"]);
-G2L["14"]["BorderSizePixel"] = 0;
-G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14"]["BackgroundTransparency"] = 1;
-G2L["14"]["Size"] = UDim2.new(0, 108, 0, 32);
-G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14"]["Position"] = UDim2.new(0.04040667414665222, 0, 0.41721853613853455, 0);
-G2L["14"]["Name"] = [[tbf]];
+G2L["15"] = Instance.new("Frame", G2L["1"]);
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Size"] = UDim2.new(0, 108, 0, 32);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Position"] = UDim2.new(0.04040667414665222, 0, 0.41721853613853455, 0);
+G2L["15"]["Name"] = [[tbf]];
 
 -- StarterGui.AscendGUI.tbf.TextButton
-G2L["15"] = Instance.new("TextButton", G2L["14"]);
-G2L["15"]["TextWrapped"] = true;
-G2L["15"]["TextStrokeTransparency"] = 0;
-G2L["15"]["BorderSizePixel"] = 0;
-G2L["15"]["TextScaled"] = true;
-G2L["15"]["BackgroundColor3"] = Color3.fromRGB(53, 53, 53);
-G2L["15"]["TextSize"] = 30;
-G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15"]["Size"] = UDim2.new(0, 137, 0, 36);
-G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15"]["Text"] = [[Ascend gui <]];
-G2L["15"]["Position"] = UDim2.new(-0.5, 0, -7.875, 0);
+G2L["16"] = Instance.new("TextButton", G2L["15"]);
+G2L["16"]["TextWrapped"] = true;
+G2L["16"]["TextStrokeTransparency"] = 0;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextScaled"] = true;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(53, 53, 53);
+G2L["16"]["TextSize"] = 30;
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["Size"] = UDim2.new(0, 137, 0, 36);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Text"] = [[Ascend gui <]];
+G2L["16"]["Position"] = UDim2.new(-0.5, 0, -7.875, 0);
 
 -- StarterGui.AscendGUI.tbf.TextButton.LocalScript
-G2L["16"] = Instance.new("LocalScript", G2L["15"]);
+G2L["17"] = Instance.new("LocalScript", G2L["16"]);
 
 
 -- StarterGui.AscendGUI.tbf.TextButton.UICorner
-G2L["17"] = Instance.new("UICorner", G2L["15"]);
-G2L["17"]["CornerRadius"] = UDim.new(0.15000000596046448, 0);
+G2L["18"] = Instance.new("UICorner", G2L["16"]);
+G2L["18"]["CornerRadius"] = UDim.new(0.15000000596046448, 0);
 
 -- StarterGui.AscendGUI.Frame.Smooth GUI Dragging
 local function C_4()
@@ -353,8 +357,8 @@ local script = G2L["13"];
 end;
 task.spawn(C_13);
 -- StarterGui.AscendGUI.tbf.TextButton.LocalScript
-local function C_16()
-local script = G2L["16"];
+local function C_17()
+local script = G2L["17"];
 	local button = script.Parent -- Assuming the LocalScript is a child of the button you want to click
 	
 	local function openGUI()
@@ -371,6 +375,6 @@ local script = G2L["16"];
 	
 	button.MouseButton1Click:Connect(openGUI)
 end;
-task.spawn(C_16);
+task.spawn(C_17);
 
 return G2L["1"], require;
