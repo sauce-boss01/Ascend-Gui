@@ -1,0 +1,349 @@
+
+local G2L = {};
+
+-- StarterGui.AscendGUI
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[AscendGUI]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+
+-- StarterGui.AscendGUI.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
+G2L["2"]["Size"] = UDim2.new(0, 335, 0, 434);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.11193753778934479, 0, 0.05629139021039009, 0);
+
+-- StarterGui.AscendGUI.Frame.clickJeuse
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["TextWrapped"] = true;
+G2L["3"]["TextStrokeTransparency"] = 0;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["TextScaled"] = true;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["TextSize"] = 44;
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0, 225, 0, 31);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[click jeuse to ascend]];
+G2L["3"]["Name"] = [[clickJeuse]];
+G2L["3"]["BackgroundTransparency"] = 1;
+G2L["3"]["Position"] = UDim2.new(0.16368862986564636, 0, 0.11392320692539215, 0);
+
+-- StarterGui.AscendGUI.Frame.Smooth GUI Dragging
+G2L["4"] = Instance.new("LocalScript", G2L["2"]);
+G2L["4"]["Name"] = [[Smooth GUI Dragging]];
+
+-- StarterGui.AscendGUI.Frame.Setting
+G2L["5"] = Instance.new("TextLabel", G2L["2"]);
+G2L["5"]["TextWrapped"] = true;
+G2L["5"]["TextStrokeTransparency"] = 0;
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["TextScaled"] = true;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
+G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5"]["TextSize"] = 44;
+G2L["5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["Size"] = UDim2.new(0, 225, 0, 31);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Text"] = [[ascend speed]];
+G2L["5"]["Name"] = [[Setting]];
+G2L["5"]["BackgroundTransparency"] = 1;
+G2L["5"]["Position"] = UDim2.new(0.15985526144504547, 0, 0.49609696865081787, 0);
+
+-- StarterGui.AscendGUI.Frame.gbs
+G2L["6"] = Instance.new("LocalScript", G2L["2"]);
+G2L["6"]["Name"] = [[gbs]];
+
+-- StarterGui.AscendGUI.Frame.TextButton
+G2L["7"] = Instance.new("TextButton", G2L["2"]);
+G2L["7"]["TextWrapped"] = true;
+G2L["7"]["TextStrokeTransparency"] = 0;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextStrokeColor3"] = Color3.fromRGB(126, 74, 74);
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 161, 161);
+G2L["7"]["TextSize"] = 37;
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Size"] = UDim2.new(0, 228, 0, 72);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[stop ascending]];
+G2L["7"]["Position"] = UDim2.new(0.15673764050006866, 0, 0.7537330389022827, 0);
+
+-- StarterGui.AscendGUI.Frame.TextButton.LocalScript
+G2L["8"] = Instance.new("LocalScript", G2L["7"]);
+G2L["8"]["Enabled"] = false;
+G2L["8"]["Disabled"] = true;
+
+-- StarterGui.AscendGUI.Frame.TextButton.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["7"]);
+G2L["9"]["CornerRadius"] = UDim.new(0.07500000298023224, 0);
+
+-- StarterGui.AscendGUI.Frame.Button
+G2L["a"] = Instance.new("ImageButton", G2L["2"]);
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(100, 100, 100);
+G2L["a"]["Image"] = [[http://www.roblox.com/asset/?id=14973754397]];
+G2L["a"]["Size"] = UDim2.new(0, 222, 0, 113);
+G2L["a"]["Name"] = [[Button]];
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Position"] = UDim2.new(0.16368862986564636, 0, 0.20070278644561768, 0);
+
+-- StarterGui.AscendGUI.Frame.Button.a
+G2L["b"] = Instance.new("LocalScript", G2L["a"]);
+G2L["b"]["Name"] = [[a]];
+
+-- StarterGui.AscendGUI.Frame.Button.UICorner
+G2L["c"] = Instance.new("UICorner", G2L["a"]);
+G2L["c"]["CornerRadius"] = UDim.new(0.07500000298023224, 0);
+
+-- StarterGui.AscendGUI.Frame.TextBox
+G2L["d"] = Instance.new("TextBox", G2L["2"]);
+G2L["d"]["CursorPosition"] = -1;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["TextSize"] = 41;
+G2L["d"]["TextWrapped"] = true;
+G2L["d"]["TextScaled"] = true;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["PlaceholderText"] = [[ascend speed (number)]];
+G2L["d"]["Size"] = UDim2.new(0, 223, 0, 50);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Text"] = [[]];
+G2L["d"]["Position"] = UDim2.new(0.16577821969985962, 0, 0.5828368663787842, 0);
+
+-- StarterGui.AscendGUI.Frame.TextBox.LocalScript
+G2L["e"] = Instance.new("LocalScript", G2L["d"]);
+
+
+-- StarterGui.AscendGUI.Frame.TextBox.UICorner
+G2L["f"] = Instance.new("UICorner", G2L["d"]);
+G2L["f"]["CornerRadius"] = UDim.new(0.07500000298023224, 0);
+
+-- StarterGui.AscendGUI.Frame.Titlee
+G2L["10"] = Instance.new("TextLabel", G2L["2"]);
+G2L["10"]["TextWrapped"] = true;
+G2L["10"]["TextStrokeTransparency"] = 0;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["TextStrokeColor3"] = Color3.fromRGB(254, 254, 254);
+G2L["10"]["TextSize"] = 44;
+G2L["10"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Size"] = UDim2.new(0, 334, 0, 50);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Text"] = [[ascend gui]];
+G2L["10"]["Name"] = [[Titlee]];
+G2L["10"]["Position"] = UDim2.new(0, 0, -0.0006887150811962783, 0);
+
+-- StarterGui.AscendGUI.Frame.Titlee.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
+G2L["11"]["CornerRadius"] = UDim.new(0.17499999701976776, 0);
+
+-- StarterGui.AscendGUI.Frame.MadeBy
+G2L["12"] = Instance.new("TextLabel", G2L["2"]);
+G2L["12"]["TextWrapped"] = true;
+G2L["12"]["TextStrokeTransparency"] = 0;
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextScaled"] = true;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["Size"] = UDim2.new(0, 334, 0, 21);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[made by sauce_boss01 in discord, only works for R6. R15 support may come later.]];
+G2L["12"]["Name"] = [[MadeBy]];
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Position"] = UDim2.new(0.0029850746504962444, 0, 0.9357606172561646, 0);
+
+-- StarterGui.AscendGUI.Frame.UICorner
+G2L["13"] = Instance.new("UICorner", G2L["2"]);
+G2L["13"]["CornerRadius"] = UDim.new(0.07500000298023224, 0);
+
+-- StarterGui.AscendGUI.tbf
+G2L["14"] = Instance.new("Frame", G2L["1"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Size"] = UDim2.new(0, 108, 0, 32);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Position"] = UDim2.new(0.04040667414665222, 0, 0.41721853613853455, 0);
+G2L["14"]["Name"] = [[tbf]];
+
+-- StarterGui.AscendGUI.tbf.TextButton
+G2L["15"] = Instance.new("TextButton", G2L["14"]);
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["TextStrokeTransparency"] = 0;
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextScaled"] = true;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(53, 53, 53);
+G2L["15"]["TextSize"] = 30;
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["Size"] = UDim2.new(0, 137, 0, 36);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Text"] = [[Ascend gui <]];
+G2L["15"]["Position"] = UDim2.new(-0.5, 0, -7.875, 0);
+
+-- StarterGui.AscendGUI.tbf.TextButton.LocalScript
+G2L["16"] = Instance.new("LocalScript", G2L["15"]);
+
+
+-- StarterGui.AscendGUI.tbf.TextButton.UICorner
+G2L["17"] = Instance.new("UICorner", G2L["15"]);
+G2L["17"]["CornerRadius"] = UDim.new(0.15000000596046448, 0);
+
+-- StarterGui.AscendGUI.Frame.Smooth GUI Dragging
+local function C_4()
+local script = G2L["4"];
+	
+	
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+end;
+task.spawn(C_4);
+-- StarterGui.AscendGUI.Frame.gbs
+local function C_6()
+local script = G2L["6"];
+	_G.player = game.Players.LocalPlayer
+	_G.character = _G.player.Character or _G.player.CharacterAdded:Wait()
+	_G.humanoid = _G.character:WaitForChild("Humanoid")
+	
+	_G.UserJump = _G.humanoid.JumpPower
+	_G.UserSpeed = _G.humanoid.WalkSpeed
+	_G.GameGravity = workspace.Gravity
+	
+	
+	
+	
+end;
+task.spawn(C_6);
+-- StarterGui.AscendGUI.Frame.Button.a
+local function C_b()
+local script = G2L["b"];
+	
+	script.Parent.MouseButton1Up:Connect(function()
+		
+	
+		_G.humanoid.UseJumpPower = true
+		_G. Anim = Instance.new("Animation")
+		_G.Anim.AnimationId = "rbxassetid://181526230"
+	
+		_G. track = _G.humanoid:LoadAnimation(_G.Anim)
+	
+		_G.track:Play(.1, 1, 1)
+	
+		game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = 0
+		workspace.Gravity = 0
+		_G.humanoid.JumpPower = _G.TxtValue
+		wait(2)
+	
+		_G.player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		
+		script.Parent.Parent.TextButton.LocalScript.Enabled = true
+		
+	end)
+	
+	
+	
+end;
+task.spawn(C_b);
+-- StarterGui.AscendGUI.Frame.TextBox.LocalScript
+local function C_e()
+local script = G2L["e"];
+	-- Assuming your TextBox is named 'TextBox' and is a direct child of the StarterGui
+	local tBox = script.Parent
+	
+	-- Function to filter out non-numeric characters
+	local function filterNumbers(input)
+		return input:gsub("%D", "")
+	end
+	
+	-- Connect the TextBox's FocusLost event to capture when the player finishes typing
+	tBox.FocusLost:Connect(function()
+		_G.userInput = tBox.Text
+		_G.numericInput = filterNumbers(_G.userInput)
+	
+		-- Now you can use numericInput to change the TextBoxValue in your script
+		_G.TxtValue = tonumber(_G.numericInput)
+		print(_G.TxtValue)
+	end)
+end;
+task.spawn(C_e);
+-- StarterGui.AscendGUI.tbf.TextButton.LocalScript
+local function C_16()
+local script = G2L["16"];
+	local button = script.Parent -- Assuming the LocalScript is a child of the button you want to click
+	
+	local function openGUI()
+		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame 
+	
+		if gui.Visible == true then
+			gui.Visible = false -- Make the GUI visible
+			script.Parent.Text = "Ascend gui >"
+		else
+			gui.Visible = true
+			script.Parent.Text = "Ascend gui <"
+		end
+	end
+	
+	button.MouseButton1Click:Connect(openGUI)
+end;
+task.spawn(C_16);
+
+return G2L["1"], require;
