@@ -279,8 +279,8 @@ local script = G2L["8"];
 	
 		game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = true
 	-- Stop all currently playing animations
-		for _, _G.track in ipairs(_G.humanoid:GetPlayingAnimationTracks()) do
-			_G.track:Stop()
+		for _, track in ipairs(_G.humanoid:GetPlayingAnimationTracks()) do
+			track:Stop()
 	end
 	
 		workspace.Gravity = _G.GameGravity
