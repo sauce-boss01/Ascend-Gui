@@ -1,3 +1,4 @@
+--this is basiclly script tht makes it able to push players
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
 
 while true do 
