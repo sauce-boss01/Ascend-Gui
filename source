@@ -1,4 +1,14 @@
 
+	_G.player = game.Players.LocalPlayer
+	_G.character = _G.player.Character or _G.player.CharacterAdded:Wait()
+	_G.humanoid = _G.character:WaitForChild("Humanoid")
+	
+	_G.UserJump = _G.humanoid.JumpPower
+	_G.UserSpeed = _G.humanoid.WalkSpeed
+	_G.GameGravity = workspace.Gravity
+
+
+
 local G2L = {};
 
 -- StarterGui.AscendGUI
@@ -262,13 +272,7 @@ task.spawn(C_4);
 -- StarterGui.AscendGUI.Frame.gbs
 local function C_6()
 local script = G2L["6"];
-	_G.player = game.Players.LocalPlayer
-	_G.character = _G.player.Character or _G.player.CharacterAdded:Wait()
-	_G.humanoid = _G.character:WaitForChild("Humanoid")
-	
-	_G.UserJump = _G.humanoid.JumpPower
-	_G.UserSpeed = _G.humanoid.WalkSpeed
-	_G.GameGravity = workspace.Gravity
+
 	
 	
 	
@@ -305,10 +309,10 @@ local script = G2L["b"];
 		
 	
 		_G.humanoid.UseJumpPower = true
-		_G. Anim = Instance.new("Animation")
+		_G.Anim = Instance.new("Animation")
 		_G.Anim.AnimationId = "rbxassetid://181526230"
 	
-		_G. track = _G.humanoid:LoadAnimation(_G.Anim)
+		_G.track = _G.humanoid:LoadAnimation(_G.Anim)
 	
 		_G.track:Play(.1, 1, 1)
 	
