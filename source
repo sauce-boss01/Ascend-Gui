@@ -1,11 +1,4 @@
 
-	_G.player = game.Players.LocalPlayer
-	_G.character = _G.player.Character or _G.player.CharacterAdded:Wait()
-	_G.humanoid = _G.character:WaitForChild("Humanoid")
-	
-	_G.UserJump = _G.humanoid.JumpPower
-	_G.UserSpeed = _G.humanoid.WalkSpeed
-	_G.GameGravity = workspace.Gravity
 
 
 
