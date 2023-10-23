@@ -5,7 +5,10 @@ local G2L = {};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[AscendGUI]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["Enabled"] = false;
 G2L["1"]["ResetOnSpawn"] = true;
+
+game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = true
 
 -- StarterGui.AscendGUI.Frame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -277,6 +280,7 @@ local script = G2L["7"];
 	
 	local function onCharacterAdded(character)
 		resetAttributes()
+local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
 	end
 	
@@ -398,13 +402,13 @@ local script = G2L["17"];
 	local button = script.Parent -- Assuming the LocalScript is a child of the button you want to click
 	
 	local function openGUI()
-		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI 
+		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame
 	
-		if gui.Enabled == true then
-			gui.Enabled = false -- Make the GUI visible
+		if gui.Visible == true then
+			gui.Visible = false -- Make the GUI visible
 			script.Parent.Text = "Ascend gui >"
 		else
-			gui.Enabled = true
+			gui.Visible = true
 			script.Parent.Text = "Ascend gui <"
 		end
 	end
@@ -412,5 +416,4 @@ local script = G2L["17"];
 	button.MouseButton1Click:Connect(openGUI)
 end;
 task.spawn(C_17);
-
 return G2L["1"], require;
