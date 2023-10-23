@@ -398,13 +398,13 @@ local script = G2L["17"];
 	local button = script.Parent -- Assuming the LocalScript is a child of the button you want to click
 	
 	local function openGUI()
-		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame 
+		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI 
 	
-		if gui.Visible == true then
-			gui.Visible = false -- Make the GUI visible
+		if gui.Enabled == true then
+			gui.Enabled = false -- Make the GUI visible
 			script.Parent.Text = "Ascend gui >"
 		else
-			gui.Visible = true
+			gui.Enabled = true
 			script.Parent.Text = "Ascend gui <"
 		end
 	end
