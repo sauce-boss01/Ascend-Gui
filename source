@@ -280,7 +280,7 @@ local script = G2L["7"];
 	
 	local function onCharacterAdded(character)
 		resetAttributes()
-local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = false
+game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
 	end
 	
