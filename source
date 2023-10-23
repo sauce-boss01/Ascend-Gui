@@ -8,8 +8,6 @@ G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["Enabled"] = false;
 G2L["1"]["ResetOnSpawn"] = true;
 
-game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = true
-
 -- StarterGui.AscendGUI.Frame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["BorderSizePixel"] = 0;
@@ -416,4 +414,7 @@ local script = G2L["17"];
 	button.MouseButton1Click:Connect(openGUI)
 end;
 task.spawn(C_17);
+
+game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = true
+
 return G2L["1"], require;
