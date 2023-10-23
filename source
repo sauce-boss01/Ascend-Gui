@@ -1,3 +1,44 @@
+local RunService = game:GetService("RunService")
+local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Table
+local guiCreationTimes = {}
+
+function createGui(name)
+    local gui = Instance.new("ScreenGui")
+    gui.Name = name
+    gui.Parent = playerGui
+
+    --creation time
+    guiCreationTimes[gui] = os.time()
+end
+
+function checkAndDestroyDuplicateGui(guiName)
+    local guis = playerGui:GetChildren()
+    local oldestGui = nil
+    local oldestTime = math.huge
+
+    for _, gui in ipairs(guis) do
+        if gui.Name == guiName then
+            local creationTime = guiCreationTimes[gui]
+            if creationTime and creationTime < oldestTime then
+                oldestTime = creationTime
+                oldestGui = gui
+            end
+        end
+    end
+
+    if oldestGui then
+        oldestGui:Destroy()
+        guiCreationTimes[oldestGui] = nil -- Remove from table
+    end
+end
+
+-- check for duplicate guis
+RunService.Heartbeat:Connect(function()
+    checkAndDestroyDuplicateGui("AcendGUI")
+end)
+
 
 local G2L = {};
 
@@ -5,7 +46,10 @@ local G2L = {};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[AscendGUI]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["Enabled"] = false;
 G2L["1"]["ResetOnSpawn"] = true;
+
+game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = true
 
 -- StarterGui.AscendGUI.Frame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -277,7 +321,6 @@ local script = G2L["7"];
 	
 	local function onCharacterAdded(character)
 		resetAttributes()
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
 	end
 	
@@ -413,6 +456,4 @@ local script = G2L["17"];
 	button.MouseButton1Click:Connect(openGUI)
 end;
 task.spawn(C_17);
-
-
 return G2L["1"], require;
