@@ -5,7 +5,6 @@ local G2L = {};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[AscendGUI]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-G2L["1"]["Enabled"] = false;
 G2L["1"]["ResetOnSpawn"] = true;
 
 -- StarterGui.AscendGUI.Frame
@@ -278,7 +277,7 @@ local script = G2L["7"];
 	
 	local function onCharacterAdded(character)
 		resetAttributes()
-game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = false
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
 	end
 	
@@ -415,6 +414,5 @@ local script = G2L["17"];
 end;
 task.spawn(C_17);
 
-game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = true
 
 return G2L["1"], require;
