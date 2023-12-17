@@ -264,7 +264,9 @@ local script = G2L["6"];
 	
 	local function onCharacterAdded(character)
 		resetAttributes()
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
+
 	end
 	
 	local function onCharacterDied()
