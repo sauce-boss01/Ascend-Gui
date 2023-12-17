@@ -234,7 +234,7 @@ G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["16"]["Size"] = UDim2.new(0, 137, 0, 36);
 G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["16"]["Text"] = [[Ascend gui <]];
-G2L["16"]["Position"] = UDim2.new(-0.5, 0, -7.875, 0);
+G2L["16"]["Position"] = UDim2.new(-0.019, 0, -5.656, 0);
 
 -- StarterGui.AscendGUI.tbf.TextButton.LocalScript
 G2L["17"] = Instance.new("LocalScript", G2L["16"]);
