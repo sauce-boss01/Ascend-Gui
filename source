@@ -264,6 +264,7 @@ local script = G2L["6"];
 	
 	local function onCharacterAdded(character)
 		resetAttributes()
+		print("loadstring")
 	end
 	
 	local function onCharacterDied()
@@ -276,6 +277,7 @@ local script = G2L["6"];
 	script.Parent.MouseButton1Up:Connect(function()
 		resetAttributes()
 	end)
+	
 end;
 task.spawn(C_6);
 -- StarterGui.AscendGUI.Frame.Button.a
