@@ -5,40 +5,38 @@ local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 local guiCreationTimes = {}
 
 function createGui(name)
-    local gui = Instance.new("ScreenGui")
-    gui.Name = name
-    gui.Parent = playerGui
+	local gui = Instance.new("ScreenGui")
+	gui.Name = name
+	gui.Parent = playerGui
 
-    --creation time
-    guiCreationTimes[gui] = os.time()
+	--creation time
+	guiCreationTimes[gui] = os.time()
 end
 
 function checkAndDestroyDuplicateGui(guiName)
-    local guis = playerGui:GetChildren()
-    local oldestGui = nil
-    local oldestTime = math.huge
+	local guis = playerGui:GetChildren()
+	local oldestGui = nil
+	local oldestTime = math.huge
 
-    for _, gui in ipairs(guis) do
-        if gui.Name == guiName then
-            local creationTime = guiCreationTimes[gui]
-            if creationTime and creationTime < oldestTime then
-                oldestTime = creationTime
-                oldestGui = gui
-            end
-        end
-    end
+	for _, gui in ipairs(guis) do
+		if gui.Name == guiName then
+			local creationTime = guiCreationTimes[gui]
+			if creationTime and creationTime < oldestTime then
+				oldestTime = creationTime
+				oldestGui = gui
+			end
+		end
+	end
 
-    if oldestGui then
-        oldestGui:Destroy()
-        guiCreationTimes[oldestGui] = nil -- Remove from table
-    end
+	if oldestGui then
+		oldestGui:Destroy()
+		guiCreationTimes[oldestGui] = nil -- Remove from table
+	end
 end
 
--- check for duplicate guis
 RunService.Heartbeat:Connect(function()
-    checkAndDestroyDuplicateGui("AcendGUI")
+	checkAndDestroyDuplicateGui("AcendGUI")
 end)
-
 
 local G2L = {};
 
@@ -46,10 +44,7 @@ local G2L = {};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[AscendGUI]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-G2L["1"]["Enabled"] = false;
-G2L["1"]["ResetOnSpawn"] = true;
-
-game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Enabled = true
+G2L["1"]["ResetOnSpawn"] = false;
 
 -- StarterGui.AscendGUI.Frame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -57,7 +52,7 @@ G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
 G2L["2"]["Size"] = UDim2.new(0, 360, 0, 434);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Position"] = UDim2.new(0.11193753778934479, 0, 0.05629139021039009, 0);
+G2L["2"]["Position"] = UDim2.new(0.23478765785694122, 0, 0.08039606362581253, 0);
 
 -- StarterGui.AscendGUI.Frame.clickJeuse
 G2L["3"] = Instance.new("TextLabel", G2L["2"]);
@@ -76,136 +71,135 @@ G2L["3"]["Name"] = [[clickJeuse]];
 G2L["3"]["BackgroundTransparency"] = 1;
 G2L["3"]["Position"] = UDim2.new(0.19114769995212555, 0, 0.15078957378864288, 0);
 
--- StarterGui.AscendGUI.Frame.Smooth GUI Dragging
-G2L["4"] = Instance.new("LocalScript", G2L["2"]);
-G2L["4"]["Name"] = [[Smooth GUI Dragging]];
-
 -- StarterGui.AscendGUI.Frame.speed
-G2L["5"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["TextStrokeTransparency"] = 0;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextScaled"] = true;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["TextSize"] = 44;
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["Size"] = UDim2.new(0, 225, 0, 31);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[ascend speed]];
+G2L["4"]["Name"] = [[speed]];
+G2L["4"]["BackgroundTransparency"] = 1;
+G2L["4"]["Position"] = UDim2.new(0.18335266411304474, 0, 0.5260509252548218, 0);
+
+-- StarterGui.AscendGUI.Frame.TextButton
+G2L["5"] = Instance.new("TextButton", G2L["2"]);
 G2L["5"]["TextWrapped"] = true;
 G2L["5"]["TextStrokeTransparency"] = 0;
 G2L["5"]["BorderSizePixel"] = 0;
-G2L["5"]["TextScaled"] = true;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
+G2L["5"]["TextStrokeColor3"] = Color3.fromRGB(126, 74, 74);
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 161, 161);
+G2L["5"]["TextSize"] = 37;
 G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5"]["TextSize"] = 44;
-G2L["5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5"]["Size"] = UDim2.new(0, 225, 0, 31);
+G2L["5"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Size"] = UDim2.new(0, 240, 0, 49);
 G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5"]["Text"] = [[ascend speed]];
-G2L["5"]["Name"] = [[speed]];
-G2L["5"]["BackgroundTransparency"] = 1;
-G2L["5"]["Position"] = UDim2.new(0.18335266411304474, 0, 0.5260509252548218, 0);
-
--- StarterGui.AscendGUI.Frame.TextButton
-G2L["6"] = Instance.new("TextButton", G2L["2"]);
-G2L["6"]["TextWrapped"] = true;
-G2L["6"]["TextStrokeTransparency"] = 0;
-G2L["6"]["BorderSizePixel"] = 0;
-G2L["6"]["TextStrokeColor3"] = Color3.fromRGB(126, 74, 74);
-G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 161, 161);
-G2L["6"]["TextSize"] = 37;
-G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6"]["Size"] = UDim2.new(0, 240, 0, 49);
-G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6"]["Text"] = [[stop ascending]];
-G2L["6"]["Position"] = UDim2.new(0.1621403992176056, 0, 0.7726333141326904, 0);
+G2L["5"]["Text"] = [[stop ascending]];
+G2L["5"]["Position"] = UDim2.new(0.1621403992176056, 0, 0.7726333141326904, 0);
 
 -- StarterGui.AscendGUI.Frame.TextButton.LocalScript
-G2L["7"] = Instance.new("LocalScript", G2L["6"]);
+G2L["6"] = Instance.new("LocalScript", G2L["5"]);
 
 
 -- StarterGui.AscendGUI.Frame.TextButton.UICorner
-G2L["8"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"] = Instance.new("UICorner", G2L["5"]);
 
 
 -- StarterGui.AscendGUI.Frame.Button
-G2L["9"] = Instance.new("ImageButton", G2L["2"]);
-G2L["9"]["BorderSizePixel"] = 0;
-G2L["9"]["BackgroundColor3"] = Color3.fromRGB(100, 100, 100);
-G2L["9"]["Image"] = [[http://www.roblox.com/asset/?id=14973754397]];
-G2L["9"]["Size"] = UDim2.new(0, 252, 0, 113);
-G2L["9"]["Name"] = [[Button]];
-G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["Position"] = UDim2.new(0.15225881338119507, 0, 0.24448159337043762, 0);
+G2L["8"] = Instance.new("ImageButton", G2L["2"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(100, 100, 100);
+G2L["8"]["Image"] = [[http://www.roblox.com/asset/?id=14973754397]];
+G2L["8"]["Size"] = UDim2.new(0, 252, 0, 113);
+G2L["8"]["Name"] = [[Button]];
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Position"] = UDim2.new(0.15225881338119507, 0, 0.24448159337043762, 0);
 
 -- StarterGui.AscendGUI.Frame.Button.a
-G2L["a"] = Instance.new("LocalScript", G2L["9"]);
-G2L["a"]["Name"] = [[a]];
+G2L["9"] = Instance.new("LocalScript", G2L["8"]);
+G2L["9"]["Name"] = [[a]];
 
 -- StarterGui.AscendGUI.Frame.Button.UICorner
-G2L["b"] = Instance.new("UICorner", G2L["9"]);
+G2L["a"] = Instance.new("UICorner", G2L["8"]);
 
 
 -- StarterGui.AscendGUI.Frame.TextBox
-G2L["c"] = Instance.new("TextBox", G2L["2"]);
-G2L["c"]["CursorPosition"] = -1;
-G2L["c"]["BorderSizePixel"] = 0;
-G2L["c"]["TextSize"] = 41;
-G2L["c"]["TextWrapped"] = true;
-G2L["c"]["TextScaled"] = true;
-G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["c"]["PlaceholderText"] = [[ascend speed (number)]];
-G2L["c"]["Size"] = UDim2.new(0, 243, 0, 54);
-G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c"]["Text"] = [[]];
-G2L["c"]["Position"] = UDim2.new(0.1702863872051239, 0, 0.5966618061065674, 0);
+G2L["b"] = Instance.new("TextBox", G2L["2"]);
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["TextSize"] = 41;
+G2L["b"]["TextWrapped"] = true;
+G2L["b"]["TextScaled"] = true;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b"]["PlaceholderText"] = [[ascend speed (number)]];
+G2L["b"]["Size"] = UDim2.new(0, 243, 0, 54);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Text"] = [[]];
+G2L["b"]["Position"] = UDim2.new(0.1702863872051239, 0, 0.5966618061065674, 0);
 
 -- StarterGui.AscendGUI.Frame.TextBox.LocalScript
-G2L["d"] = Instance.new("LocalScript", G2L["c"]);
+G2L["c"] = Instance.new("LocalScript", G2L["b"]);
 
 
 -- StarterGui.AscendGUI.Frame.TextBox.UICorner
-G2L["e"] = Instance.new("UICorner", G2L["c"]);
+G2L["d"] = Instance.new("UICorner", G2L["b"]);
 
 
 -- StarterGui.AscendGUI.Frame.Titlee
-G2L["f"] = Instance.new("TextLabel", G2L["2"]);
-G2L["f"]["TextWrapped"] = true;
-G2L["f"]["TextStrokeTransparency"] = 0;
-G2L["f"]["BorderSizePixel"] = 0;
-G2L["f"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
-G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["f"]["TextStrokeColor3"] = Color3.fromRGB(254, 254, 254);
-G2L["f"]["TextSize"] = 44;
-G2L["f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["Size"] = UDim2.new(0, 360, 0, 50);
-G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["Text"] = [[ascend gui]];
-G2L["f"]["Name"] = [[Titlee]];
-G2L["f"]["Position"] = UDim2.new(0, 0, -0.0006887110648676753, 0);
+G2L["e"] = Instance.new("TextLabel", G2L["2"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["TextStrokeTransparency"] = 0;
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(53, 73, 205);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["TextStrokeColor3"] = Color3.fromRGB(254, 254, 254);
+G2L["e"]["TextSize"] = 44;
+G2L["e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Size"] = UDim2.new(0, 360, 0, 50);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[ascend gui]];
+G2L["e"]["Name"] = [[Titlee]];
+G2L["e"]["Position"] = UDim2.new(0, 0, -0.0006887110648676753, 0);
 
 -- StarterGui.AscendGUI.Frame.Titlee.UICorner
-G2L["10"] = Instance.new("UICorner", G2L["f"]);
-
+G2L["f"] = Instance.new("UICorner", G2L["e"]);
+G2L["f"]["CornerRadius"] = UDim.new(0.07999999821186066, 0);
 
 -- StarterGui.AscendGUI.Frame.disab
-G2L["11"] = Instance.new("LocalScript", G2L["2"]);
-G2L["11"]["Name"] = [[disab]];
+G2L["10"] = Instance.new("LocalScript", G2L["2"]);
+G2L["10"]["Name"] = [[disab]];
 
 -- StarterGui.AscendGUI.Frame.gbs
-G2L["12"] = Instance.new("LocalScript", G2L["2"]);
-G2L["12"]["Name"] = [[gbs]];
+G2L["11"] = Instance.new("LocalScript", G2L["2"]);
+G2L["11"]["Name"] = [[gbs]];
 
 -- StarterGui.AscendGUI.Frame.MadeBy
-G2L["13"] = Instance.new("TextLabel", G2L["2"]);
-G2L["13"]["TextWrapped"] = true;
-G2L["13"]["TextStrokeTransparency"] = 0;
-G2L["13"]["BorderSizePixel"] = 0;
-G2L["13"]["TextScaled"] = true;
-G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["13"]["TextSize"] = 14;
-G2L["13"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["13"]["Size"] = UDim2.new(0, 334, 0, 21);
-G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13"]["Text"] = [[made by sauce_boss01 in discord, only works for R6. R15 support may come later.]];
-G2L["13"]["Name"] = [[MadeBy]];
-G2L["13"]["BackgroundTransparency"] = 1;
-G2L["13"]["Position"] = UDim2.new(0.0342237688601017, 0, 0.9150233268737793, 0);
+G2L["12"] = Instance.new("TextLabel", G2L["2"]);
+G2L["12"]["TextWrapped"] = true;
+G2L["12"]["TextStrokeTransparency"] = 0;
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextScaled"] = true;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["Size"] = UDim2.new(0, 334, 0, 21);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[made by sauce_boss01 in discord, only works for R6. R15 support may come later.]];
+G2L["12"]["Name"] = [[MadeBy]];
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Position"] = UDim2.new(0.0342237688601017, 0, 0.9150233268737793, 0);
+
+-- StarterGui.AscendGUI.Frame.Smooth GUI Dragging
+G2L["13"] = Instance.new("LocalScript", G2L["2"]);
+G2L["13"]["Name"] = [[Smooth GUI Dragging]];
 
 -- StarterGui.AscendGUI.Frame.UICorner
 G2L["14"] = Instance.new("UICorner", G2L["2"]);
@@ -234,19 +228,154 @@ G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["16"]["Size"] = UDim2.new(0, 137, 0, 36);
 G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["16"]["Text"] = [[Ascend gui <]];
-G2L["16"]["Position"] = UDim2.new(-0.019, 0, -5.656, 0);
+G2L["16"]["Position"] = UDim2.new(0.10185185074806213, 0, 0.40625, 0);
 
 -- StarterGui.AscendGUI.tbf.TextButton.LocalScript
 G2L["17"] = Instance.new("LocalScript", G2L["16"]);
 
 
+-- StarterGui.AscendGUI.tbf.TextButton.Smooth GUI Dragging
+G2L["18"] = Instance.new("LocalScript", G2L["16"]);
+G2L["18"]["Name"] = [[Smooth GUI Dragging]];
+
 -- StarterGui.AscendGUI.tbf.TextButton.UICorner
-G2L["18"] = Instance.new("UICorner", G2L["16"]);
+G2L["19"] = Instance.new("UICorner", G2L["16"]);
 
 
+-- StarterGui.AscendGUI.Frame.TextButton.LocalScript
+local function C_6()
+local script = G2L["6"];
+	local player = game.Players.LocalPlayer
+	local humanoid = player.Character:WaitForChild("Humanoid")
+	
+	local function resetAttributes()
+		for _, track in ipairs(_G.humanoid:GetPlayingAnimationTracks()) do
+			track:Stop()
+		end
+		workspace.Gravity = _G.GameGravity
+		_G.humanoid.WalkSpeed = _G.UserSpeed
+		_G.humanoid.JumpPower = _G.UserJump
+	end
+	
+	local function onCharacterAdded(character)
+		resetAttributes()
+	end
+	
+	local function onCharacterDied()
+		resetAttributes()
+	end
+	
+	player.CharacterAdded:Connect(onCharacterAdded)
+	humanoid.Died:Connect(onCharacterDied)
+	
+	script.Parent.MouseButton1Up:Connect(function()
+		resetAttributes()
+	end)
+end;
+task.spawn(C_6);
+-- StarterGui.AscendGUI.Frame.Button.a
+local function C_9()
+local script = G2L["9"];
+	
+	
+	script.Parent.MouseButton1Up:Connect(function()
+	
+	
+		_G.character:WaitForChild("Humanoid").UseJumpPower = true
+			_G.Anim = Instance.new("Animation")
+			_G.Anim.AnimationId = "rbxassetid://181526230"
+	
+			_G.track = _G.humanoid:LoadAnimation(_G.Anim)
+	
+			_G.track:Play(.1, 1, 1)
+	
+		_G.humanoid.WalkSpeed = 0
+		workspace.Gravity = 0
+		_G.humanoid.JumpPower = _G.TxtValue
+	
+		_G.humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, false)
+		
+			wait(2)
+		_G.humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
+			_G.player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	
+		game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = true
+	
+	
+	end)
+	
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+end;
+task.spawn(C_9);
+-- StarterGui.AscendGUI.Frame.TextBox.LocalScript
+local function C_c()
+local script = G2L["c"];
+	-- Assuming your TextBox is named 'TextBox' and is a direct child of the StarterGui
+	
+	
+		local tBox = script.Parent
+	
+		-- Function to filter out non-numeric characters
+		local function filterNumbers(input)
+			return input:gsub("%D", "")
+		end
+	
+		-- Connect the TextBox's FocusLost event to capture when the player finishes typing
+		tBox.FocusLost:Connect(function()
+			_G.userInput = tBox.Text
+			_G.numericInput = filterNumbers(_G.userInput)
+	
+			-- Now you can use numericInput to change the TextBoxValue in your script
+			_G.TxtValue = tonumber(_G.numericInput)
+			print(_G.TxtValue)
+		end)
+	
+	
+	
+	
+	
+end;
+task.spawn(C_c);
+-- StarterGui.AscendGUI.Frame.disab
+local function C_10()
+local script = G2L["10"];
+	
+	
+		game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = false
+	
+	
+	
+	
+end;
+task.spawn(C_10);
+-- StarterGui.AscendGUI.Frame.gbs
+local function C_11()
+local script = G2L["11"];
+	_G.player = game.Players.LocalPlayer
+	_G.character = _G.player.Character or _G.player.CharacterAdded:Wait()
+	_G.humanoid = _G.character:WaitForChild("Humanoid")
+	
+	_G.UserJump = _G.humanoid.JumpPower
+	_G.UserSpeed = _G.humanoid.WalkSpeed
+	
+	_G.GameGravity = workspace.Gravity
+	
+	
+	
+end;
+task.spawn(C_11);
 -- StarterGui.AscendGUI.Frame.Smooth GUI Dragging
-local function C_4()
-local script = G2L["4"];
+local function C_13()
+local script = G2L["13"];
 	
 	
 	local UserInputService = game:GetService("UserInputService")
@@ -303,146 +432,14 @@ local script = G2L["4"];
 	
 	runService.Heartbeat:Connect(Update)
 end;
-task.spawn(C_4);
--- StarterGui.AscendGUI.Frame.TextButton.LocalScript
-local function C_7()
-local script = G2L["7"];
-	local player = game.Players.LocalPlayer
-	local humanoid = player.Character:WaitForChild("Humanoid")
-	
-	local function resetAttributes()
-		for _, track in ipairs(_G.humanoid:GetPlayingAnimationTracks()) do
-			track:Stop()
-		end
-		workspace.Gravity = _G.GameGravity
-		_G.humanoid.WalkSpeed = _G.UserSpeed
-		_G.humanoid.JumpPower = _G.UserJump
-	end
-	
-	local function onCharacterAdded(character)
-		resetAttributes()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Ascend-Gui/main/source"))()
-	end
-	
-	local function onCharacterDied()
-		resetAttributes()
-	end
-	
-	player.CharacterAdded:Connect(onCharacterAdded)
-	humanoid.Died:Connect(onCharacterDied)
-	
-	script.Parent.MouseButton1Up:Connect(function()
-		resetAttributes()
-	end)
-end;
-task.spawn(C_7);
--- StarterGui.AscendGUI.Frame.Button.a
-local function C_a()
-local script = G2L["a"];
-	
-	
-	script.Parent.MouseButton1Up:Connect(function()
-	
-	
-		_G.character:WaitForChild("Humanoid").UseJumpPower = true
-			_G.Anim = Instance.new("Animation")
-			_G.Anim.AnimationId = "rbxassetid://181526230"
-	
-			_G.track = _G.humanoid:LoadAnimation(_G.Anim)
-	
-			_G.track:Play(.1, 1, 1)
-	
-		_G.humanoid.WalkSpeed = 0
-		workspace.Gravity = 0
-		_G.humanoid.JumpPower = _G.TxtValue
-	
-		_G.humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, false)
-		
-			wait(2)
-		_G.humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
-			_G.player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-	
-		game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = true
-	
-	
-	end)
-	
-		
-		
-		
-		
-	
-	
-	
-	
-	
-	
-end;
-task.spawn(C_a);
--- StarterGui.AscendGUI.Frame.TextBox.LocalScript
-local function C_d()
-local script = G2L["d"];
-	-- Assuming your TextBox is named 'TextBox' and is a direct child of the StarterGui
-	
-	
-		local tBox = script.Parent
-	
-		-- Function to filter out non-numeric characters
-		local function filterNumbers(input)
-			return input:gsub("%D", "")
-		end
-	
-		-- Connect the TextBox's FocusLost event to capture when the player finishes typing
-		tBox.FocusLost:Connect(function()
-			_G.userInput = tBox.Text
-			_G.numericInput = filterNumbers(_G.userInput)
-	
-			-- Now you can use numericInput to change the TextBoxValue in your script
-			_G.TxtValue = tonumber(_G.numericInput)
-			print(_G.TxtValue)
-		end)
-	
-	
-	
-	
-	
-end;
-task.spawn(C_d);
--- StarterGui.AscendGUI.Frame.disab
-local function C_11()
-local script = G2L["11"];
-	
-	
-		game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame.TextButton.LocalScript.Enabled = false
-	
-	
-	
-	
-end;
-task.spawn(C_11);
--- StarterGui.AscendGUI.Frame.gbs
-local function C_12()
-local script = G2L["12"];
-	_G.player = game.Players.LocalPlayer
-	_G.character = _G.player.Character or _G.player.CharacterAdded:Wait()
-	_G.humanoid = _G.character:WaitForChild("Humanoid")
-	
-	_G.UserJump = _G.humanoid.JumpPower
-	_G.UserSpeed = _G.humanoid.WalkSpeed
-	
-	_G.GameGravity = workspace.Gravity
-	
-	
-	
-end;
-task.spawn(C_12);
+task.spawn(C_13);
 -- StarterGui.AscendGUI.tbf.TextButton.LocalScript
 local function C_17()
 local script = G2L["17"];
 	local button = script.Parent -- Assuming the LocalScript is a child of the button you want to click
 	
 	local function openGUI()
-		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame
+		local gui = game:GetService("Players").LocalPlayer.PlayerGui.AscendGUI.Frame 
 	
 		if gui.Visible == true then
 			gui.Visible = false -- Make the GUI visible
@@ -456,4 +453,65 @@ local script = G2L["17"];
 	button.MouseButton1Click:Connect(openGUI)
 end;
 task.spawn(C_17);
+-- StarterGui.AscendGUI.tbf.TextButton.Smooth GUI Dragging
+local function C_18()
+local script = G2L["18"];
+	
+	
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+end;
+task.spawn(C_18);
+
 return G2L["1"], require;
